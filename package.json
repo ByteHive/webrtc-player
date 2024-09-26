@@ -24,11 +24,11 @@
     }
   },
   "scripts": {
-    "dev": "parcel --target demo --dist-dir dist-demo --host 0.0.0.0 --port 2345 --no-cache",
+    "dev": "parcel --target demo --dist-dir dist-demo  --port 2345 --no-cache",
     "build": "parcel build --target main --target types",
     "build:demo": "parcel build --target demo",
     "postversion": "git push && git push --tags",
-    "prepare": "husky install",
+    "prepare": "husky uninstall",
     "lint": "eslint .",
     "pretty": "prettier --check --ignore-unknown .",
     "pretty:format": "prettier --write --ignore-unknown .",

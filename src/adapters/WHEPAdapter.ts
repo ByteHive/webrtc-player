@@ -105,7 +105,13 @@ export class WHEPAdapter implements Adapter {
           );
         }
       }
-
+      //add stereo audio
+      if (this.audio) {
+        offer.sdp = offer.sdp.replace(
+          'useinbandfec=1',
+          'useinbandfec=1;stereo=1'
+        );
+      }
       await this.localPeer.setLocalDescription(offer);
       this.waitingForCandidates = true;
       this.iceGatheringTimeout = setTimeout(
